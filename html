@@ -1,1 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunnyside Agency</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">sunnyside</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+      </ul>
+      <button class="contact-btn">Contact</button>
+    </nav>
+  </header>
+  <section class="hero">
+    <h1>We Are Creatives</h1>
+    <img src="path/to/arrow-down.svg" alt="Arrow Down">
+  </section>
+  <section class="services">
+    <div class="service">
+      <img src="path/to/image1.jpg" alt="Transform Your Brand">
+      <h2>Transform your brand</h2>
+      <p>We are a full-service creative agency specializing in helping brands grow fast.</p>
+      <a href="#">Learn More</a>
+    </div>
+    <div class="service">
+      <img src="path/to/image2.jpg" alt="Stand Out">
+      <h2>Stand out to the right audience</h2>
+      <p>Using a collaborative formula of designers, researchers, and strategists, we build brands that connect.</p>
+      <a href="#">Learn More</a>
+    </div>
+  </section>
+  <section class="testimonials">
+    <h2>Client Testimonials</h2>
+    <div class="testimonial">
+      <p>“Sunnyside’s enthusiasm coupled with their keen interest in our brand’s success made it a satisfying and enjoyable experience.”</p>
+      <h3>Thomas S.</h3>
+    </div>
+  </section>
+  <footer>
+    <p>© Sunnyside Agency. All Rights Reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
 
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+}
+
+.contact-btn {
+  background-color: yellow;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.hero {
+  text-align: center;
+  background: #55CDFC;
+  color: white;
+  padding: 100px 20px;
+}
+
+.services {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px 20px;
+}
+
+.service {
+  text-align: center;
+  max-width: 300px;
+}
+
+.service img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.testimonials {
+  background: #f4f4f4;
+  padding: 40px 20px;
+}
+
+footer {
+  text-align: center;
+  background-color: #2d2d2d;
+  color: white;
+  padding: 20px;
+}
+
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
