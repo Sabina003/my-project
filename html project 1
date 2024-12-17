@@ -7,136 +7,90 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <div class="logo">Sweet Treats</div>
-      <ul class="nav-links">
-        <li><a href="#products">Products</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <section class="hero">
+  <div class="header">
     <h1>Welcome to Sweet Treats</h1>
     <p>Your one-stop shop for the sweetest delights!</p>
-    <button onclick="scrollToSection('products')">Shop Now</button>
-  </section>
+    <a href="#products"><button>Shop Now</button></a>
+  </div>
 
-  <section id="products" class="products">
+  
+  <div id="products" class="products">
     <h2>Our Products</h2>
-    <div class="product-list">
-      <div class="product-item">
-        <img src="path/to/cake.jpg" alt="Chocolate Cake">
-        <h3>Chocolate Cake</h3>
-        <p>$15.00</p>
-        <button onclick="addToCart('Chocolate Cake')">Add to Cart</button>
-      </div>
-      <div class="product-item">
-        <img src="path/to/cookie.jpg" alt="Cookies">
-        <h3>Cookies</h3>
-        <p>$5.00</p>
-        <button onclick="addToCart('Cookies')">Add to Cart</button>
-      </div>
-      <div class="product-item">
-        <img src="path/to/macarons.jpg" alt="Macarons">
-        <h3>Macarons</h3>
-        <p>$10.00</p>
-        <button onclick="addToCart('Macarons')">Add to Cart</button>
-      </div>
+    <div class="product">
+      <img src="path/to/cake.jpg" alt="Chocolate Cake">
+      <h3>Chocolate Cake</h3>
+      <p>$15.00</p>
+      <button>Add to Cart</button>
     </div>
-  </section>
+    <div class="product">
+      <img src="path/to/cookie.jpg" alt="Cookies">
+      <h3>Cookies</h3>
+      <p>$5.00</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="path/to/macarons.jpg" alt="Macarons">
+      <h3>Macarons</h3>
+      <p>$10.00</p>
+      <button>Add to Cart</button>
+    </div>
+  </div>
 
-  <footer>
+ 
+  <div class="footer">
     <p>© 2024 Sweet Treats. All rights reserved.</p>
-  </footer>
-
-  <script src="script.js"></script>
+  </div>
 </body>
 </html>
 
-
-
-
-
-
-
-
 body {
-  font-family: 'Arial', sans-serif;
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  text-align: center; /* Mərkəzləşdirmə */
 }
 
-header {
-  background-color: #ff6f61;
-  color: white;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 15px;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: white;
-}
-
-.hero {
-  text-align: center;
+.header {
   background-color: #ffe4e1;
   padding: 50px 20px;
 }
 
-.hero h1 {
+.header h1 {
   font-size: 2.5rem;
   color: #ff6f61;
 }
 
-.hero button {
+.header button {
   background-color: #ff6f61;
   color: white;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none;
 }
+
 
 .products {
   padding: 20px;
-  text-align: center;
 }
 
-.product-list {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.product-item {
-  background-color: #fff7f0;
+.product {
+  display: inline-block;
+  margin: 10px;
   border: 1px solid #ffd6cc;
   padding: 10px;
   border-radius: 8px;
-  width: 200px;
-  text-align: center;
+  background-color: #fff7f0;
 }
 
-.product-item img {
-  width: 100%;
+.product img {
+  width: 150px;
   height: auto;
   border-radius: 8px;
 }
 
-.product-item button {
+.product button {
   background-color: #ff6f61;
   color: white;
   border: none;
@@ -145,22 +99,24 @@ header {
   border-radius: 5px;
 }
 
-footer {
+
+.footer {
   background-color: #ff6f61;
   color: white;
-  text-align: center;
-  padding: 10px 0;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.footer p {
+  margin: 0;
 }
 
 
-
-
+function addToCart(productName) {
+  alert(`${productName} added to your cart!`);
+}
 
 function scrollToSection(id) {
-    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-  }
-  
- 
-  function addToCart(productName) {
-    alert(productName + ' has been added to your cart!');
-  }
+  document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+}
+
